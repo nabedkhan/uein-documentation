@@ -1,8 +1,8 @@
 {
-  "name": "Uein Project",
+  "name": "uein-docuementation",
   "version": "1.0.0",
   "scripts": {
-    "dev": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+    "dev": "tailwindcss -i ./src/input.css -o ./src/assets/css/style.css --watch"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.8"

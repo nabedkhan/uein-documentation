@@ -12,8 +12,8 @@
     <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon" />
     <title>Uein Documentation</title>
     <!-- CSS FILE -->
-    <link href="./css/atom-one-dark.css" rel="stylesheet" />
-    <link href="../../dist/output.css" rel="stylesheet" />
+    <link href="./assets/css/atom-one-dark.css" rel="stylesheet" />
+    <link href="./assets/css/style.css" rel="stylesheet" />
   </head>
   <body class="relative">
     <!-- HEADER SECTION -->
@@ -21,7 +21,7 @@
       <div class="flex items-center justify-between max-w-screen-xl px-4 mx-auto xl:px-0">
         <div>
           <a href="index.html" class="flex items-center gap-3">
-            <img src="./images/uein-logo_icon.svg" alt="Uein Admin Dashboard" class="w-5" />
+            <img src="./assets/images/uein-logo_icon.svg" alt="Uein Admin Dashboard" class="w-5" />
             <p class="text-lg font-semibold">Uein Documentation</p>
           </a>
         </div>
@@ -43,7 +43,7 @@
       <div class="space-y-5">
         <div>
           <a href="index.html" class="flex items-center gap-2">
-            <img src="./images/uein-logo_icon.svg" alt="uein-logo" class="w-4" />
+            <img src="./assets/images/uein-logo_icon.svg" alt="uein-logo" class="w-4" />
             <p class="font-semibold truncate text-md">Uein</p>
           </a>
         </div>
@@ -54,7 +54,7 @@
             <a href="index.html">Quick Start</a>
           </li>
           <li
-            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer text-primary hover:text-primary">
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer text-primary">
             <a href="folder-structure.html">Folder Structure</a>
           </li>
           <li
@@ -64,6 +64,18 @@
           <li
             class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary">
             <a href="router.html">Router</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary">
+            <a href="data-fetching.html">Data Fetching</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary">
+            <a href="utils-functions.html">Utils Functions</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary">
+            <a href="rtl.html">RTL</a>
           </li>
           <li
             class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary">
@@ -87,7 +99,7 @@
             <a href="index.html">Quick Start</a>
           </li>
           <li
-            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer text-primary hover:text-primary">
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer text-primary">
             <a href="folder-structure.html">Folder Structure</a>
           </li>
           <li
@@ -97,6 +109,18 @@
           <li
             class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary">
             <a href="router.html">Router</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary">
+            <a href="data-fetching.html">Data Fetching</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary">
+            <a href="utils-functions.html">Utils Functions</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary">
+            <a href="rtl.html">RTL</a>
           </li>
           <li
             class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary">
@@ -122,15 +146,16 @@
               : Contains all static files, such as JPGs, PNGs, SVGs, and PDFs.
             </li>
             <li>
-              <span class="px-2 py-1 rounded bg-slate-200/60 text-primary-darker"
-                >src/**fakeData**/</span
-              >
-              : Stores all of the project's data, including users, products, and invoice table data.
+              <span class="px-2 py-1 rounded bg-slate-200/60 text-primary-darker">
+                src/__mock__/
+              </span>
+              : Stores all of the project's mock api and data, such as users, products, and
+              invoices.
             </li>
             <li>
               <span class="px-2 py-1 rounded bg-slate-200/60 text-primary-darker">
-                src/components/</span
-              >
+                src/components/
+              </span>
               : Throughout the entire project, we primarily use shadcn components, along with a few
               custom reusable components integrated within shadcn components. All reusable
               components are sourced from this folder.
@@ -182,6 +207,14 @@
 │  ├─ assets
 │  │  └─ index.css
 │  │
+│  ├─ __mock__
+│  │  ├─ invoices
+│  │  ├─ orders
+│  │  ├─ products
+│  │  ├─ users
+│  │  ├─ mock.ts
+│  │  ├─ index.ts
+│  │
 │  ├─ components
 │  │  ├─ form
 │  │  │  ├─ SelectField.vue
@@ -214,9 +247,8 @@
 │  │  │  ├─ sales.ts
 │  │  │  └─ sass
 │  │  ├─ few more folders..
-│  │  ├─ invoices.ts
+│  │  ├─ notifications.ts
 │  │  ├─ navigation.ts
-│  │  └─ few more files
 │  │
 │  ├─ hooks
 │  │  ├─ useApexChartOptions.ts
@@ -231,7 +263,7 @@
 │  │  |  ├─ NavItem.vue
 │  │  |  └─ SidebarNavigation.vue
 │  │  ├─ DefaultLayout.vue
-│  │  └─ Mobilesidebar.vue
+│  │  └─ MobileSidebar.vue
 │  │
 │  ├─ lib
 │  │  ├─ colors.ts
@@ -269,7 +301,7 @@
 |  │  │  ├─ NotFound.vue
 |  │  │  ├─ Register.vue
 |  │  │  ├─ ServerError.vue
-|  │  │  └─ Veritifcation.vue
+|  │  │  └─ Verification.vue
 │  │  ├─ settings
 |  │  │  └─ some more files...
 │  │  ├─ support
@@ -371,8 +403,8 @@
     </main>
 
     <!-- ALL THE SCRIPTS -->
-    <script src="./js/lucide.min.js"></script>
-    <script src="./js/highlight.min.js"></script>
-    <script src="./js/script.js"></script>
+    <script src="./assets/js/lucide.min.js"></script>
+    <script src="./assets/js/highlight.min.js"></script>
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>
